@@ -81,6 +81,7 @@ button {
   cursor: pointer;
   font-family: inherit;
   border: none;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
 .item {
