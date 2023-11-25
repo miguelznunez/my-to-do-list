@@ -63,7 +63,7 @@ button {
 .to-do-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 30px;
 }
 
 .to-do-list i {
