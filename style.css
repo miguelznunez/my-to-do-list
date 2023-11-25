@@ -58,12 +58,15 @@ button {
   font-size: 1.2rem;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
 .to-do-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .to-do-list i {
