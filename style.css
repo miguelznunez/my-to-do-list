@@ -23,6 +23,10 @@ button {
   padding-top: 50px;
 }
 
+.app h1{
+  color: #004445;
+}
+
 .input-container {
   display: flex;
   justify-content: space-between;

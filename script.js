@@ -19,13 +19,13 @@ function displayItems(){
                 <div class="input-controller">
                   <textarea disabled>${itemsArray[i]}</textarea>
                   <div class="edit-controller">
-                    <button class="editBtn"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-                    <button class="deleteBtn"><i class="fa-solid fa-square-minus"></i> Delete</button>
+                    <button class="editBtn"><i class="fa-solid fa-pen-to-square"></i> edit</button>
+                    <button class="deleteBtn"><i class="fa-solid fa-square-minus"></i> delete</button>
                   </div>
                 </div>
                 <div class="update-controller">
-                  <button class="saveBtn"><i class="fa-solid fa-floppy-disk"></i> Save</button>
-                  <button class="cancelBtn"><i class="fa-solid fa-ban"></i> Cancel</button>
+                  <button class="saveBtn"><i class="fa-solid fa-floppy-disk"></i> save</button>
+                  <button class="cancelBtn"><i class="fa-solid fa-ban"></i> cancel</button>
                 </div>
               </div>`
   }
