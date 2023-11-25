@@ -45,8 +45,21 @@ button {
   font-size: 1.2rem;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  padding: 20px;
+  padding: 18px;
   outline: none;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+  border: 1px solid lightgray;
+}
+
+.input-container input:focus{
+  box-shadow: 0 0 5px #004445;
+  border: 1px solid #004445;
+}{
+
 }
 
 .input-container button {
