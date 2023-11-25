@@ -52,7 +52,7 @@ button {
   -ms-transition: all 0.30s ease-in-out;
   -o-transition: all 0.30s ease-in-out;
   transition: all 0.30s ease-in-out;
-  border: 1px solid lightgray;
+  border: 1px solid whitesmoke;
 }
 
 .input-container input:focus{
