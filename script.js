@@ -23,8 +23,8 @@ function displayItems(){
                 </div>
                 <div class="input-controller">
                   <div class="edit-controller">
-                    <button class="editBtn"><i class="fa-solid fa-pen-to-square"></i> edit</button>
                     <button class="deleteBtn"><i class="fa-solid fa-square-minus"></i> delete</button>
+                    <button class="editBtn"><i class="fa-solid fa-pen-to-square"></i> edit</button>
                   </div>
                 </div>
               </div>`

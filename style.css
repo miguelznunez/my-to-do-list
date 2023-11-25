@@ -117,10 +117,11 @@ textarea:focus {
 .input-controller {
   display: flex;
   gap: 10px;
+  justify-content: flex-end;
 }
 
 .edit-controller {
-  display: flex;
+  display: flex; 
   gap: 10px;
 }
 
