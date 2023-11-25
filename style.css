@@ -58,8 +58,6 @@ button {
 .input-container input:focus{
   box-shadow: 0 0 5px #004445;
   border: 1px solid #004445;
-}{
-
 }
 
 .input-container button {
