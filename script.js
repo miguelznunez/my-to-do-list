@@ -1,9 +1,6 @@
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 completedArray = localStorage.getItem('completedItems') ? JSON.parse(localStorage.getItem('completedItems')) : [];
 
-console.log(itemsArray)
-console.log(completedArray)
-
 document.querySelector("#enter").addEventListener("click", () => {
   const item = document.querySelector("#item")
   createItem(item)
@@ -37,6 +34,8 @@ function displayToDoItems(){
                     </div>`
   }
   document.querySelector(".to-do-list").innerHTML = toDoItems
+  if(itemsArray.length)
+    document.querySelector("#to-do-items").innerHTML = itemsArray.length + " Tasks"
   activateEditListeners()
   activateSaveListeners()
   activateCancelListeners()
@@ -51,6 +50,8 @@ function displayCompletedItems(){
               </div>`
   }
   document.querySelector(".complete-list").innerHTML = completedItems
+  if(completedArray.length)
+    document.querySelector("#completed-items").innerHTML = completedArray.length + " Completed"
 }
 
 function activateEditListeners(){
