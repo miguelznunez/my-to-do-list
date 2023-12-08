@@ -27,6 +27,23 @@ button {
   color: black;
 }
 
+.tasks-header{
+ color: #d9534f;
+ border: 1px dotted lightgray;
+ border-radius: 5px;
+ padding: 10px;
+}
+
+.completed-header{
+  color: #5cb85c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px dotted lightgray;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 .input-container {
   display: flex;
   justify-content: space-between;
@@ -76,7 +93,8 @@ button {
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
-.to-do-list {
+.to-do-list,
+.complete-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -87,7 +105,8 @@ button {
   cursor: pointer;
 }
 
-.to-do-list button {
+.to-do-list button,
+.completed-header button {
   padding: 8px;
   border-radius: 5px;
   background-color: black;
@@ -104,7 +123,6 @@ button {
   flex-direction: column;
   gap: 10px;
   background-color: white;
-  border-left: 5px solid black;
   border-radius: 10px;
   padding: 12px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
@@ -149,6 +167,10 @@ textarea:focus {
 
 .update-controller {
   display: none;
+}
+
+.editBtn{
+  background-color: #f0ad4e;
 }
 
 @media(max-width: 768px) {
