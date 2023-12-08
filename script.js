@@ -90,6 +90,8 @@ function activateCancelListeners(){
 }
 
 function createItem(item){
+  if(!item.value)
+    return;
   itemsArray.push(item.value)
   localStorage.setItem('items', JSON.stringify(itemsArray))
   location.reload()
