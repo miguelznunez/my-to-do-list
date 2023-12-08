@@ -26,20 +26,18 @@ function displayToDoItems(){
   let toDoItems = ""
   for(let i = 0; i < itemsArray.length; i++){
       toDoItems += `<div class="item" style="border-left: 5px solid #d9534f;">
-                    <textarea disabled>${itemsArray[i]}</textarea>
-                    <span class="deleteItem" onclick="deleteItem(${i})">&#x2717;</span>
-                    <div class="update-controller">
-                      <button class="saveBtn"><i class="fa-solid fa-floppy-disk"></i> save</button>
-                      <button class="cancelBtn"><i class="fa-solid fa-ban"></i> cancel</button>
-                    </div>
-                    <div class="input-controller">
-                      <div class="edit-controller">
-                        <span class="completeItem" onclick="completeItem(${i})">&#10004;</span>
+                      <textarea disabled>${itemsArray[i]}</textarea>
+                      <span class="deleteItem" onclick="deleteItem(${i})">&#x2717;</span>
+                      <span class="editItem">&#9998;</span>
+                      <span class="completeItem" onclick="completeItem(${i})">&#10004;</span>
+                      <div class="update-controller">
+                        <button class="saveBtn"><i class="fa-solid fa-floppy-disk"></i> save</button>
+                        <button class="cancelBtn"><i class="fa-solid fa-ban"></i> cancel</button>
                       </div>
-                    </div>
-                  </div>`
+                    </div>`
   }
   document.querySelector(".to-do-list").innerHTML = toDoItems
+  activateEditListeners()
   activateSaveListeners()
   activateCancelListeners()
 }
@@ -56,7 +54,7 @@ function displayCompletedItems(){
 }
 
 function activateEditListeners(){
-  const editBtn = document.querySelectorAll(".editBtn")
+  const editBtn = document.querySelectorAll(".editItem")
   const updateController = document.querySelectorAll(".update-controller")
   const inputs = document.querySelectorAll(".item textarea")
   editBtn.forEach((eB, i) => {
@@ -82,6 +80,7 @@ function activateCancelListeners(){
   const inputs = document.querySelectorAll(".item textarea")
   cancelBtn.forEach((cB, i) => {
     cB.addEventListener("click", () => {
+      inputs[i].value = itemsArray[i]
       updateController[i].style.display = "none"
       inputs[i].disabled = true
       inputs[i].style.border = "none"

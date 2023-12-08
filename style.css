@@ -24,7 +24,7 @@ button {
 }
 
 .app h1{
-  color: black;
+  color: gray;
 }
 
 .tasks-header{
@@ -74,15 +74,15 @@ button {
 }
 
 .input-container input:focus{
-  box-shadow: 0 0 5px black;
-  border: 1px solid black;
+  box-shadow: 0 0 5px #0275d8;
+  border: 1px solid #0275d8;
 }
 
 .input-container button {
   color: white;
   font-family: inherit;
   border: none;
-  background-color: black;
+  background-color: #0275d8;
   padding: 22px;
   font-size: 1.2rem;
   border-top-right-radius: 5px;
@@ -137,6 +137,15 @@ button {
   cursor: pointer;
   font-size: 22px;
   color: #d9534f;
+}
+
+.item .editItem{
+  position: absolute;
+  bottom: 3px;
+  left: 5px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #f0ad4e
 }
 
 .item .completeItem{
