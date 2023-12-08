@@ -1,6 +1,9 @@
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 completedArray = localStorage.getItem('completedItems') ? JSON.parse(localStorage.getItem('completedItems')) : [];
 
+console.log(itemsArray)
+console.log(completedArray)
+
 document.querySelector("#enter").addEventListener("click", () => {
   const item = document.querySelector("#item")
   createItem(item)
@@ -23,22 +26,20 @@ function displayToDoItems(){
   let toDoItems = ""
   for(let i = 0; i < itemsArray.length; i++){
       toDoItems += `<div class="item" style="border-left: 5px solid #d9534f;">
-                  <textarea disabled>${itemsArray[i]}</textarea>
-                  <div class="update-controller">
-                    <button class="saveBtn"><i class="fa-solid fa-floppy-disk"></i> save</button>
-                    <button class="cancelBtn"><i class="fa-solid fa-ban"></i> cancel</button>
-                  </div>
-                  <div class="input-controller">
-                    <div class="edit-controller">
-                      <button class="completeBtn"><i class="fa-solid fa-check"></i> complete</button>
-                      <button class="editBtn"><i class="fa-solid fa-pen-to-square"></i> edit</button>
+                    <textarea disabled>${itemsArray[i]}</textarea>
+                    <span class="deleteItem" onclick="deleteItem(${i})">&#x2717;</span>
+                    <div class="update-controller">
+                      <button class="saveBtn"><i class="fa-solid fa-floppy-disk"></i> save</button>
+                      <button class="cancelBtn"><i class="fa-solid fa-ban"></i> cancel</button>
                     </div>
-                  </div>
-                </div>`
+                    <div class="input-controller">
+                      <div class="edit-controller">
+                        <span class="completeItem" onclick="completeItem(${i})">&#10004;</span>
+                      </div>
+                    </div>
+                  </div>`
   }
   document.querySelector(".to-do-list").innerHTML = toDoItems
-  activateCompleteListeners()
-  activateEditListeners()
   activateSaveListeners()
   activateCancelListeners()
 }
@@ -48,16 +49,10 @@ function displayCompletedItems(){
   for(let i = 0; i < completedArray.length; i++){
     completedItems += `<div class="item" style="border-left: 5px solid #5cb85c;">
                 <textarea disabled>${completedArray[i]}</textarea>
+                <span class="deleteItem" onclick="deleteCompletedItem(${i})">&#x2717;</span>
               </div>`
   }
   document.querySelector(".complete-list").innerHTML = completedItems
-}
-
-function activateCompleteListeners(){
-  let completeBtn = document.querySelectorAll(".completeBtn")
-  completeBtn.forEach((cB, i) => {
-    cB.addEventListener("click", () => { completeItem(i) })
-  })
 }
 
 function activateEditListeners(){
@@ -103,9 +98,18 @@ function createItem(item){
 function completeItem(i){
   completedArray.push(itemsArray[i])
   localStorage.setItem('completedItems', JSON.stringify(completedArray))
+  deleteItem(i)
+}
 
+function deleteItem(i){
   itemsArray.splice(i,1)
   localStorage.setItem('items', JSON.stringify(itemsArray))
+  location.reload()
+}
+
+function deleteCompletedItem(i){
+  completedArray.splice(i,1)
+  localStorage.setItem('completedItems', JSON.stringify(completedArray))
   location.reload()
 }
 
