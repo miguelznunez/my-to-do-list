@@ -51,7 +51,7 @@ function displayCompletedItems(){
   }
   document.querySelector(".complete-list").innerHTML = completedItems
   if(completedArray.length)
-    document.querySelector("#completed-items").innerHTML = completedArray.length + " Completed"
+    document.querySelector("#completed-items").innerHTML = completedArray.length + " Wins"
 }
 
 function activateEditListeners(){
