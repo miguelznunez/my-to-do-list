@@ -46,7 +46,7 @@ function displayCompletedItems(){
   for(let i = 0; i < completedArray.length; i++){
     completedItems += `<div class="item" style="border-left: 5px solid #5cb85c;">
                 <textarea disabled>${completedArray[i]}</textarea>
-                <span class="deleteItem" onclick="deleteCompletedItem(${i})">&#x2717;</span>
+                <span class="deleteItem" onclick="deleteCompletedItem(${i})">&#x2718;</span>
               </div>`
   }
   document.querySelector(".complete-list").innerHTML = completedItems
