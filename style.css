@@ -155,7 +155,7 @@ button {
   left: 5px;
   cursor: pointer;
   font-size: 22px;
-  color: #f0ad4e
+  color: #f0ad4e;
 }
 
 .item .completeItem{
@@ -211,6 +211,31 @@ textarea:focus {
 .update-controller {
   display: none;
 }
+
+.updateItem{
+  position: absolute;
+  bottom: 3px;
+  left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.updateItem i {
+  color: #5bc0de;
+}
+
+.cancelUpdate{
+  position: absolute;
+  bottom: 3px;
+  left: 65px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.cancelUpdate i{
+  color: #d9534f;
+}
+
 
 @media(max-width: 768px) {
   .app {

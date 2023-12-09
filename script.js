@@ -25,20 +25,17 @@ function displayToDoItems(){
       toDoItems += `<div class="item" style="border-left: 5px solid #d9534f;">
                       <textarea disabled>${itemsArray[i]}</textarea>
                       <span class="deleteItem" onclick="deleteItem(${i})">&#x2718;</span>
-                      <span class="editItem">&#9998;</span>
+                      <span class="editItem" onclick="editItem(${i})">&#9998;</span>
                       <span class="completeItem" onclick="completeItem(${i})">&#10004;</span>
                       <div class="update-controller">
-                        <button class="saveBtn"><i class="fa-solid fa-floppy-disk"></i> save</button>
-                        <button class="cancelBtn"><i class="fa-solid fa-ban"></i> cancel</button>
+                        <span class="updateItem" onclick="updateItem(${i})"><i class="fa-solid fa-floppy-disk"></i></span> 
+                        <span class="cancelUpdate" onclick="cancelUpdate(${i})"><i class="fa-solid fa-rotate-left"></i></span> 
                       </div>
                     </div>`
   }
   document.querySelector(".to-do-list").innerHTML = toDoItems
   if(itemsArray.length)
     document.querySelector("#to-do-items").innerHTML = itemsArray.length + " Tasks"
-  activateEditListeners()
-  activateSaveListeners()
-  activateCancelListeners()
 }
 
 function displayCompletedItems(){
@@ -52,41 +49,6 @@ function displayCompletedItems(){
   document.querySelector(".complete-list").innerHTML = completedItems
   if(completedArray.length)
     document.querySelector("#completed-items").innerHTML = completedArray.length + " Wins"
-}
-
-function activateEditListeners(){
-  const editBtn = document.querySelectorAll(".editItem")
-  const updateController = document.querySelectorAll(".update-controller")
-  const inputs = document.querySelectorAll(".item textarea")
-  editBtn.forEach((eB, i) => {
-    eB.addEventListener("click", () => { 
-      updateController[i].style.display = "block"
-      inputs[i].disabled = false })
-  })
-}
-
-function activateSaveListeners(){
-  const saveBtn = document.querySelectorAll(".saveBtn")
-  const inputs = document.querySelectorAll(".item textarea")
-  saveBtn.forEach((sB, i) => {
-    sB.addEventListener("click", () => {
-      updateItem(inputs[i].value, i)
-    })
-  })
-}
-
-function activateCancelListeners(){
-  const cancelBtn = document.querySelectorAll(".cancelBtn")
-  const updateController = document.querySelectorAll(".update-controller")
-  const inputs = document.querySelectorAll(".item textarea")
-  cancelBtn.forEach((cB, i) => {
-    cB.addEventListener("click", () => {
-      inputs[i].value = itemsArray[i]
-      updateController[i].style.display = "none"
-      inputs[i].disabled = true
-      inputs[i].style.border = "none"
-    })
-  })
 }
 
 function createItem(item){
@@ -115,10 +77,26 @@ function deleteCompletedItem(i){
   location.reload()
 }
 
-function updateItem(text, i){
-  itemsArray[i] = text
+function editItem(i){
+  const updateController = document.querySelectorAll(".update-controller"),
+  input = document.querySelectorAll(".item textarea")
+  updateController[i].style.display = "block"
+  input[i].disabled = false
+}
+
+function updateItem(i){
+  const input = document.querySelectorAll(".item textarea")
+  itemsArray[i] = input[i].value
   localStorage.setItem('items', JSON.stringify(itemsArray))
   location.reload()
+}
+
+function cancelUpdate(i){
+  const updateController = document.querySelectorAll(".update-controller"),
+  input = document.querySelectorAll(".item textarea")
+  input[i].value = itemsArray[i]
+  updateController[i].style.display = "none"
+  input[i].disabled = true
 }
 
 window.onload = function() {
