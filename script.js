@@ -24,7 +24,7 @@ function displayToDoItems(){
   for(let i = 0; i < itemsArray.length; i++){
       toDoItems += `<div class="item" style="border-left: 5px solid #d9534f;">
                       <textarea disabled>${itemsArray[i]}</textarea>
-                      <span class="deleteItem" onclick="deleteItem(${i})">&#x2717;</span>
+                      <span class="deleteItem" onclick="deleteItem(${i})">&#x2718;</span>
                       <span class="editItem">&#9998;</span>
                       <span class="completeItem" onclick="completeItem(${i})">&#10004;</span>
                       <div class="update-controller">
