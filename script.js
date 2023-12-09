@@ -34,8 +34,11 @@ function displayToDoItems(){
                     </div>`
   }
   document.querySelector(".to-do-list").innerHTML = toDoItems
-  if(itemsArray.length)
+  if(itemsArray.length && itemsArray.length === 1)
+    document.querySelector("#to-do-items").innerHTML = itemsArray.length + " Task"
+  if(itemsArray.length && itemsArray.length > 1)
     document.querySelector("#to-do-items").innerHTML = itemsArray.length + " Tasks"
+  
 }
 
 function displayCompletedItems(){
@@ -47,7 +50,9 @@ function displayCompletedItems(){
               </div>`
   }
   document.querySelector(".complete-list").innerHTML = completedItems
-  if(completedArray.length)
+  if(completedArray.length && completedArray.length === 1)
+    document.querySelector("#completed-items").innerHTML = completedArray.length + " Win"
+  if(completedArray.length && completedArray.length > 1)
     document.querySelector("#completed-items").innerHTML = completedArray.length + " Wins"
 }
 
