@@ -30,6 +30,10 @@ button {
   color: #5bc0de;
 }
 
+.main-header h1{
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.1);
+}
+
 .tasks-header{
  color: #d9534f;
  border: 1px dotted #d9534f;
