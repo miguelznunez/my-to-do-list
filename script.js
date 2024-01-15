@@ -84,7 +84,13 @@ function deleteCompletedItem(i){
 
 function editItem(i){
   const updateController = document.querySelectorAll(".update-controller"),
+  editItem = document.querySelectorAll(".editItem")
+  deleteBtn = document.querySelectorAll(".deleteItem"),
+  completeItem = document.querySelectorAll(".completeItem"),
   input = document.querySelectorAll(".item textarea")
+  deleteBtn[i].style.display = "none"
+  completeItem[i].style.display = "none"
+  editItem[i].style.display = "none"
   updateController[i].style.display = "block"
   input[i].disabled = false
 }
@@ -98,9 +104,15 @@ function updateItem(i){
 
 function cancelUpdate(i){
   const updateController = document.querySelectorAll(".update-controller"),
+  editItem = document.querySelectorAll(".editItem")
+  deleteBtn = document.querySelectorAll(".deleteItem"),
+  completeItem = document.querySelectorAll(".completeItem")
   input = document.querySelectorAll(".item textarea")
   input[i].value = itemsArray[i]
   updateController[i].style.display = "none"
+  deleteBtn[i].style.display = "block"
+  completeItem[i].style.display = "block"
+  editItem[i].style.display = "block"
   input[i].disabled = true
 }
 
