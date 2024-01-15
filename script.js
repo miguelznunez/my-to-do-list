@@ -96,7 +96,7 @@ function editItem(i){
   input[i].disabled = false
   item.forEach((element, j) => {
     if(item[j] !== item[i]){
-      item[j].style.opacity = "0.5"
+      item[j].style.opacity = "0.1"
     }
   });
 }
