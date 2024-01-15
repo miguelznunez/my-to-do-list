@@ -94,6 +94,11 @@ function editItem(i){
   editItem[i].style.display = "none"
   updateController[i].style.display = "block"
   input[i].disabled = false
+  item.forEach((element, j) => {
+    if(item[j] !== item[i]){
+      item[j].style.opacity = "0.5"
+    }
+  });
 }
 
 function updateItem(i){
