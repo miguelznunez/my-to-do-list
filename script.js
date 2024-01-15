@@ -84,6 +84,7 @@ function deleteCompletedItem(i){
 
 function editItem(i){
   const updateController = document.querySelectorAll(".update-controller"),
+  item = document.querySelectorAll(".item"),
   editItem = document.querySelectorAll(".editItem")
   deleteBtn = document.querySelectorAll(".deleteItem"),
   completeItem = document.querySelectorAll(".completeItem"),

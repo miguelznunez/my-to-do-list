@@ -215,7 +215,7 @@ textarea:focus {
 .updateItem{
   position: absolute;
   top: 3px;
-  left: 95%;
+  right: 5px;
   cursor: pointer;
   font-size: 22px;
 }
@@ -227,7 +227,7 @@ textarea:focus {
 .cancelUpdate{
   position: absolute;
   bottom: 3px;
-  left: 95%;
+  right: 5px;
   cursor: pointer;
   font-size: 22px;
 }
